@@ -1,25 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Container from "./components/Container";
+import AddStudent from "./components/AddStudent";
+import StudentAttendance from "./components/StudentAttendance";
+import Student from "./models/Student";
+import "./App.css";
+
 
 function App() {
+  const [students, setStudents] = useState<Array<Student>>([]);
+  const addStudentHandler = (student: Student) => {
+    setStudents(prevState => prevState.concat(student));
+  }
+
+  const toggleStudentAttendance = (studentInfo: string) => {
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Container className="App">
+      <header className="header">
+        <h3>Student Attendance Register</h3>
       </header>
-    </div>
+      <main>
+        <div className="grid">
+          <div className="col-2">
+          <AddStudent onAddStudent={addStudentHandler} />
+          </div>
+          <div className="col-2">
+            <StudentAttendance onToggleAttendance={toggleStudentAttendance} />
+          </div>
+        </div>
+        <div>
+          {students.map(student => (<div key={student.id}>
+            {student.name}
+          </div>))}
+        </div>
+      </main>
+    </Container>
   );
 }
 
