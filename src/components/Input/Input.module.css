@@ -1,0 +1,39 @@
+.form-control {
+    padding: 0.4rem 0;
+}
+
+.form-control .input {
+    padding: 0.5rem 0.25rem;
+    border: 1px solid #54748b;
+    border-radius: 0.25rem;
+    background-color: white;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    
+}
+
+.form-control .input:focus {
+    outline: none;
+    border-color: #475569;
+}
+
+.form-control .input::placeholder {
+    color: #4b5563;
+    font-size: medium;
+
+}
+
+.form-control .error {
+    position: relative;
+    margin: 0;
+}
+
+.form-control .error .message {
+    color: #b91c1c;
+    position: absolute;
+    top: -5;
+    left: 0;
+    font-size: smaller;
+    font-weight: 300;
+}
