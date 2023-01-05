@@ -29,6 +29,7 @@ const StudentAttendance = ({ onToggleAttendance }: StudentAttendanceProps) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    // Do not submit if the input has an error
     if (error) {
       return;
     }
@@ -43,7 +44,7 @@ const StudentAttendance = ({ onToggleAttendance }: StudentAttendanceProps) => {
 
   return (
     <div className={styles.root}>
-      <h6 className={styles.header}>Mark Student Attendance</h6>
+      <h6 className={styles.header}>Toggle Student Attendance</h6>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input
           error={isTouched && error}

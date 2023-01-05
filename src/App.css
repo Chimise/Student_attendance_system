@@ -1,5 +1,12 @@
 .App {
   min-height: 100vh;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.App main {
+  flex: 1;
 }
 
 .header {
@@ -25,8 +32,16 @@
   padding: 0rem 0.5rem;
   width: 100%;
   margin-bottom: 2rem;
+}
 
+.actions {
+  display: flex;
+  justify-content: center;
 
+}
+
+.actions > * + * {
+  margin-left: 1rem;
 }
 
 @media (min-width: 768px) {
