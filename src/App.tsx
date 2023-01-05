@@ -67,7 +67,7 @@ function App() {
   return (
     <Container className="App">
       <header className="header">
-        <h3>Students Attendance Register</h3>
+        <h3>Students Attendance System</h3>
       </header>
       <main>
         <div className="grid">
