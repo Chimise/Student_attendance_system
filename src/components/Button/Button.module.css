@@ -25,3 +25,9 @@
 .button:hover {
     background-color: #1e293b;
 }
+
+.button:disabled {
+    cursor: not-allowed;
+    background-color: #b6b6b6;
+    color: #1e293b;
+}
