@@ -12,22 +12,22 @@ const MAX_ITEMS = 4;
 function App() {
   const [students, setStudents] = useState<Array<Student>>([]);
   const [page, setPage] = useState(1);
-
+  // Find the total number of pages possible or return 1 if none
  const totalPages = useMemo(() => {
-
   return Math.ceil(students.length / MAX_ITEMS) || 1;
  }, [students]);
 
  
-
+// Return the paginated data containing a maximum of 4 students
  const paginatedStudents = useMemo(() => {
   return students.slice((page - 1) * MAX_ITEMS, page * MAX_ITEMS);
  }, [page, students])
 
+ // Show new data when the next button is pressed
  const handleNextPage = () => {
   setPage(prevPage => prevPage + 1)
  }
-
+// Show previous data when the previous button is pressed
  const handlePreviousPage = () => {
   setPage(prevPage => prevPage - 1);
  }
